@@ -7,19 +7,18 @@ game_dict = {
     's' : 'Scissors'
 }
 def get_choie():
-    while True:
-        try :
-            user_input = input("Rock,paper or scissors? (r/p/s) : ").lower()
-            if user_input  in ['r','s','p'] :
-                game_options = ["Rock", "Paper", "Scissors"]
-                computer_choice = random.choice(game_options).lower()
-                user_choice = game_dict[user_input].lower()
-                print(f"You chose {user_choice}")
-                print(f"Computer Chose {computer_choice}")
-            else:
-                print("Invalid input")
-        except:
-            print("Invalid input") 
+    try :
+        user_input = input("Rock,paper or scissors? (r/p/s) : ").lower()
+        if user_input  in ['r','s','p'] :
+            game_options = ["Rock", "Paper", "Scissors"]
+            computer_choice = random.choice(game_options).lower()
+            user_choice = game_dict[user_input].lower()
+            print(f"You chose {user_choice}")
+            print(f"Computer Chose {computer_choice}")
+        else:
+            print("Invalid input")
+    except:
+         print("Invalid input") 
     return user_choice, computer_choice       
 
 
@@ -36,9 +35,7 @@ def determine_winner(user_choice, computer_choice):
             
 def play_game():
     while True:
-
         user_choice, computer_choice = get_choie()
-
         determine_winner(user_choice, computer_choice)   
         continue_option = input("Continue? (y/n) : ").lower()
         if continue_option == "n":

@@ -1,5 +1,4 @@
 import random
-import emoji
 
 game_dict = {
     'r' : "Rock",
@@ -11,7 +10,7 @@ def get_choie():
     try :
         user_input = input("Rock,paper or scissors? (r/p/s) : ").lower()
         if user_input  in list(game_dict.keys()) :
-            game_options = ["Rock", "Paper", "Scissors"]
+            game_options = list(game_dict.values())
             computer_choice = random.choice(game_options).lower()
             user_choice = game_dict[user_input].lower()
             print(f"You chose {user_choice}")

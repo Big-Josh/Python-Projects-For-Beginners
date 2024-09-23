@@ -1,9 +1,11 @@
 import qrcode
 
-website = 'https://github.com/krishnaik06'
+data = input('Enter the text or URL: ').strip()
 
-img = qrcode.make(website)
+filename = input('Enter file name: ').strip()
+
+img = qrcode.make(data)
 
 type(img)
 
-img.save('KrishNaikGit.png')
+img.save(f'{}.png')

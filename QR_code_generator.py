@@ -8,4 +8,4 @@ img = qrcode.make(data)
 
 type(img)
 
-img.save(f'{}.png')
+img.save(f'{filename}.png')
